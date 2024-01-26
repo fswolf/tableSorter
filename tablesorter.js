@@ -195,10 +195,14 @@ class tableSorter {
         this.changePage(this.currentPage - 1);
         this.currentButton = buttion;
         this.addHightlight(buttion);
+        
         if(this.currentPage == 1) this.disableButtion(0); //disable prev buttion
         else this.enableButtion(0); //enable prev buttion
-    }
 
+        if(this.currentPage == this.totalPages) this.disableButtion(6);
+        else this.enableButtion(6);
+    }
+ 
     nextButton() {
         this.currentPage += 1;
         if(this.currentPage >= 1) this.enableButtion(0); //enable prev buttion
