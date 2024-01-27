@@ -1,8 +1,9 @@
 /* -----------------------------------------------------------------
 |   Table Sorter
-|   For paging and sorting of bootstrap tables 
+|   For paging and searching of bootstrap tables 
 |   Version 0.8.0
 |   Written by Ryan Autet
+|   https://github.com/fswolf/
  -----------------------------------------------------------------*/
 "use strict";
 
@@ -27,6 +28,7 @@ class tableSorter {
         this.enableSearch = false;
         this.searchBox = 'search';
         this.searchQuery = false;
+        this.searchEndListen;
         //this.searchIcon;
 
         if(typeof Notyf === 'function') 
@@ -138,6 +140,8 @@ class tableSorter {
         this.currentPage = 1;
         this.currentButton = 1;
         this.buttonValues  = [1, 2, 3, 4, 5];
+        this.disableButtion(0);
+        this.enableButtion(6);
         this.addHightlight(this.currentButton);
     }
 
@@ -202,7 +206,7 @@ class tableSorter {
         if(this.currentPage == this.totalPages) this.disableButtion(6);
         else this.enableButtion(6);
     }
- 
+
     nextButton() {
         this.currentPage += 1;
         if(this.currentPage >= 1) this.enableButtion(0); //enable prev buttion
