@@ -1,27 +1,6 @@
 <?php
 
-class AvatarsController extends BaseController {
-	public function index() {
-		if (!$this->resumeLogin()) {
-			Flight::redirect('/signin'); //log out user with no view permision
-		}
-		else {
-			if ($this->user->access < 5) {
-				Flight::redirect('/signin');
-			}
-			else {
-				$avatars = AvatarsModel::getAll();
-				$total = AvatarsModel::count();
-
-				$this->view->set('total', $total);
-				$this->view->set('username', $this->user->username);
-				$this->view->set('avatars', $avatars);
-				$this->view->template = 'secondlife/avatars/index.html';
-				$this->view->render();
-			}
-		}
-	}
-
+class AvatarsController {
 	public function view() {
 		$result = array('success'=>false, 'error'=>'Unable to complete request');
 		if($this->resumeLogin()) {
