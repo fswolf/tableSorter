@@ -13,6 +13,7 @@ class tableSorter {
         this.myRows;
         this.myButtons;
         this.tableText;
+        this.thElements
 
         this.postPath = '/post/path';
         this.signInPath = '/signin';
@@ -263,6 +264,7 @@ class tableSorter {
         this.myRows = document.getElementById('myRows');
         this.myButtons = document.querySelectorAll(".page-link");
         this.tableText = document.getElementById('tableText');
+        this.thElements = document.querySelectorAll('thead th');
 
         this.totalRows = this.dbRows;
 
@@ -354,8 +356,7 @@ class tableSorter {
             });
         }
 
-        const thElements = document.querySelectorAll('thead th');
-        thElements.forEach(function (th, index) {
+        self.thElements.forEach(function (th, index) {
             th.addEventListener('click', function () {
                 self.sortColumn(index);
                 //console.log(`Column ${index} (${th.textContent}) clicked`);
