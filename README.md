@@ -9,8 +9,8 @@
             let tableSort = new tableSorter({ myTable: 'myAvatars', 
                                           postPath: '/avatars/view', 
                                           dbRows: <?=$total?>, 
-                                          enableSearch: true, 
-                                          searchBox: 'search-box', 
-                                          notyf: notyf }); 
+                                          enableSearch: true, //enable search if wanted
+                                          searchBox: 'search-box', //set search input id
+                                          notyf: notyf }); //include notyf if used
         });
     </script>
