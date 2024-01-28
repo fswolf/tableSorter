@@ -31,14 +31,38 @@ class tableSorter {
         this.searchEndListen;
         //this.searchIcon;
 
+        this.sortOrder = []; // Store the sorting order for each column
+
         this.notyf = false;
-        //if(typeof Notyf === 'function') this.notyf = new Notyf({ duration: 4000 });
 
         for (const key in properties) { 
             if(properties.hasOwnProperty(key)) this[key] = properties[key];
         }
 
         this.init();
+    }
+
+    sortColumn(columnIndex) {
+        const rows = Array.from(this.myTable.rows).slice(1); // Exclude the header row
+        const sortOrder = this.sortOrder[columnIndex] || 'asc';
+        const newSortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
+
+        rows.sort((a, b) => {
+            const x = a.cells[columnIndex].textContent.trim();
+            const y = b.cells[columnIndex].textContent.trim();
+
+            if (sortOrder === 'asc') return x.localeCompare(y);
+            else return y.localeCompare(x);
+        });
+
+        this.sortOrder[columnIndex] = newSortOrder;
+        this.refreshTable(rows);
+    }
+
+    refreshTable(sortedRows) {
+        const tbody = this.myTable.querySelector('tbody');
+        tbody.innerHTML = ''; // Clear existing rows
+        sortedRows.forEach(row => { tbody.appendChild(row); });
     }
 
     addRow(data) {
@@ -329,5 +353,14 @@ class tableSorter {
                 }
             });
         }
+
+        const thElements = document.querySelectorAll('thead th');
+        thElements.forEach(function (th, index) {
+            th.addEventListener('click', function () {
+                self.sortColumn(index);
+                //console.log(`Column ${index} (${th.textContent}) clicked`);
+            });
+        });
+
     }
 }   
