@@ -357,6 +357,7 @@ class tableSorter {
         }
 
         self.thElements.forEach(function (th, index) {
+            self.sortOrder[index] = 'desc';
             th.addEventListener('click', function () {
                 self.sortColumn(index);
                 //console.log(`Column ${index} (${th.textContent}) clicked`);
