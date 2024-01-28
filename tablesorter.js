@@ -1,7 +1,7 @@
 /* -----------------------------------------------------------------
 |   Table Sorter
 |   For paging and searching of bootstrap tables 
-|   Version 0.8.0
+|   Version 0.8.5
 |   Written by Ryan Autet
 |   https://github.com/fswolf/
  -----------------------------------------------------------------*/
