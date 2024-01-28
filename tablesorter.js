@@ -31,8 +31,8 @@ class tableSorter {
         this.searchEndListen;
         //this.searchIcon;
 
-        if(typeof Notyf === 'function') 
-            this.notyf = new Notyf({ duration: 4000 });
+        this.notyf = false;
+        //if(typeof Notyf === 'function') this.notyf = new Notyf({ duration: 4000 });
 
         for (const key in properties) { 
             if(properties.hasOwnProperty(key)) this[key] = properties[key];
