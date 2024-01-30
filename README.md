@@ -7,10 +7,10 @@
         document.addEventListener("DOMContentLoaded", function(event) {
             let notyf = new Notyf({ duration: 4000 });
             let tableSort = new tableSorter({ myTable: 'myAvatars', 
-                                          postPath: '/avatars/view', 
-                                          dbRows: <?=$total?>, 
-                                          enableSearch: true, //enable search if wanted
-                                          searchBox: 'search-box', //set search input id
-                                          notyf: notyf }); //include notyf if used
+                                              postPath: '/avatars/view', 
+                                              dbRows: <?=$total?>, 
+                                              enableSearch: true, //enable search if wanted
+                                              searchBox: 'search-box', //set search input id
+                                              notyf: notyf }); //include notyf if used
         });
     </script>
