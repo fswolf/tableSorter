@@ -1,6 +1,10 @@
+
+![image](https://github.com/fswolf/tableSorter/assets/8468295/645ccb55-e2b2-40a6-83a9-f82b64a92a0e)
+
     <!-- Notyf -->
     <script src="assets/vendor/notyf/notyf.min.js"></script>
-    <!-- tableSorter can use notyf -->
+    <!-- tableSorter can use notyf -->!
+
     <script src="assets/js/tablesorter.js"></script>
 
     <script>
