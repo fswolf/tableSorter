@@ -1,5 +1,5 @@
 
-![image](https://github.com/fswolf/tableSorter/assets/8468295/645ccb55-e2b2-40a6-83a9-f82b64a92a0e)
+![image](https://github.com/fswolf/tableSorter/assets/8468295/3232ccd2-5c51-4366-9cc4-e90f9c910665)
 
     <!-- Notyf -->
     <script src="assets/vendor/notyf/notyf.min.js"></script>
