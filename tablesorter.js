@@ -275,6 +275,7 @@ class tableSorter {
 
         if(this.myTable) {
             this.toggleButtons();    
+            this.updateText();
             this.ready();
         } 
         else alert('Table not found please check table id.');
