@@ -261,6 +261,7 @@ class tableSorter {
  
     refresh() {
         this.changePage(this.currentPage - 1); 
+        this.toggleButtons();
     }
  
     init() {
