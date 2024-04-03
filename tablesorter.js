@@ -1,7 +1,7 @@
 /* -----------------------------------------------------------------
 |   Table Sorter
 |   For paging and searching of bootstrap tables 
-|   Version 0.8.5
+|   Version 0.8.6
 |   Written by Ryan Autet
 |   https://github.com/fswolf/
  -----------------------------------------------------------------*/
@@ -43,7 +43,7 @@ class tableSorter {
         this.init();
     }
 
-    sortColumn(columnIndex) {
+    sortColumn(columnIndex) { //remove later pass sorting to mysql tables
         const rows = Array.from(this.myTable.rows).slice(1); // Exclude the header row
         const sortOrder = this.sortOrder[columnIndex] || 'asc';
         const newSortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
@@ -60,7 +60,7 @@ class tableSorter {
         this.refreshTable(rows);
     }
 
-    refreshTable(sortedRows) {
+    refreshTable(sortedRows) { //remove later pass sorting to mysql tables
         const tbody = this.myTable.querySelector('tbody');
         tbody.innerHTML = ''; // Clear existing rows
         sortedRows.forEach(row => { tbody.appendChild(row); });
@@ -258,7 +258,11 @@ class tableSorter {
 
         if(this.currentPage < this.totalPages) this.enableButtion(6);
     }
-
+ 
+    refresh() {
+        this.changePage(this.currentPage - 1); 
+    }
+ 
     init() {
         this.myTable = document.getElementById(this.myTable);
         this.myRows = document.getElementById('myRows');
